@@ -1,171 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>BloomMind AI</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-
   <div class="background-gradient"></div>
-
   <div class="floating-shapes">
     <div class="shape shape-1"></div>
     <div class="shape shape-2"></div>
     <div class="shape shape-3"></div>
   </div>
-
-  <div class="app-container">
-
+  <div class="login-screen" id="login-screen">
+    <div class="login-content">
+      <div class="login-logo">
+        <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="13" cy="6" r="3" fill="#22c55e" />
+          <circle cx="6" cy="13" r="3" fill="#22c55e" opacity="0.7" />
+          <circle cx="20" cy="13" r="3" fill="#22c55e" opacity="0.7" />
+          <circle cx="13" cy="20" r="3" fill="#22c55e" />
+          <circle cx="13" cy="13" r="2" fill="#22c55e" />
+        </svg>
+      </div>
+      <h1>Welcome to BloomMind AI</h1>
+      <p class="login-subtitle">Your AI companion for emotional support and mental wellness.</p>
+      <div class="input-group">
+        <input type="text" id="username-input" placeholder="What should we call you?" autocomplete="off">
+        <button id="login-btn">Begin Journey</button>
+      </div>
+    </div>
+  </div>
+  <div class="app-container" style="display: none;">
     <header class="app-header">
       <div class="logo-container">
-        <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
-          <path d="M16 8C16 8 12 12 12 16C12 18.2 13.8 20 16 20C18.2 20 20 18.2 20 16C20 12 16 8 16 8Z" fill="currentColor"/>
-          <circle cx="16" cy="16" r="3" fill="currentColor"/>
-        </svg>
-        <span class="logo-text">BloomMind</span>
+        <div class="logo-icon">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="13" cy="6" r="3" fill="#22c55e" />
+            <circle cx="6" cy="13" r="3" fill="#22c55e" opacity="0.7" />
+            <circle cx="20" cy="13" r="3" fill="#22c55e" opacity="0.7" />
+            <circle cx="13" cy="20" r="3" fill="#22c55e" />
+            <circle cx="13" cy="13" r="2" fill="#22c55e" />
+          </svg>
+        </div>
+        <h1 class="logo-text">BloomMind AI</h1>
       </div>
-
       <div class="header-actions">
-        <button class="header-btn" id="moodTrackerBtn">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
-            <circle cx="7" cy="8" r="1" fill="currentColor"/>
-            <circle cx="13" cy="8" r="1" fill="currentColor"/>
-            <path d="M6 12C6 12 7.5 14 10 14C12.5 14 14 12 14 12" stroke="currentColor" stroke-width="1.5"/>
+        <button class="icon-btn" id="mood-tracker-btn" title="Track Your Mood">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+            <line x1="9" y1="9" x2="9.01" y2="9" />
+            <line x1="15" y1="9" x2="15.01" y2="9" />
           </svg>
         </button>
-
-        <button class="header-btn" id="settingsBtn">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M10 12.5C11.4 12.5 12.5 11.4 12.5 10C12.5 8.6 11.4 7.5 10 7.5C8.6 7.5 7.5 8.6 7.5 10C7.5 11.4 8.6 12.5 10 12.5Z" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M16.5 10L18 12.5L16.5 15L14.5 14C13.9 14.5 13.2 14.9 12.5 15.1V17.5H7.5V15.1C6.8 14.9 6.1 14.5 5.5 14L3.5 15L2 12.5L3.8 11.4C3.6 11 3.5 10.5 3.5 10C3.5 9.5 3.6 9 3.8 8.6L2 7.5L3.5 5L5.5 6C6.1 5.5 6.8 5.1 7.5 4.9V2.5H12.5V4.9C13.2 5.1 13.9 5.5 14.5 6L16.5 5L18 7.5L16.2 8.6C16.4 9 16.5 9.5 16.5 10Z" stroke="currentColor" stroke-width="1.5"/>
+        <button class="icon-btn" id="tts-toggle-btn" title="Toggle Voice Response">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="volume-icon">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </button>
+        <button class="icon-btn" id="settings-btn" title="Settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3" />
+            <path
+              d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24" />
           </svg>
         </button>
       </div>
     </header>
-
     <div class="chat-container">
-
-      <div class="chat-messages" id="chatMessages">
-        <div class="message bot-message">
-          <div class="message-avatar">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
-              <path d="M12 6C12 6 9 9 9 12C9 13.7 10.3 15 12 15C13.7 15 15 13.7 15 12C15 9 12 6 12 6Z" fill="currentColor"/>
-            </svg>
-          </div>
-          <div class="message-bubble">
-            <p>Hi, I'm BloomMind — your calm AI guide. How are you feeling today?</p>
-          </div>
-        </div>
+      <div class="chat-messages" id="chat-messages">
       </div>
-
-      <div class="quick-actions">
-        <button class="quick-action-btn" data-action="overwhelmed">😔 Feeling Overwhelmed</button>
-        <button class="quick-action-btn" data-action="clarity">💭 Need Clarity</button>
-        <button class="quick-action-btn" data-action="stress">😌 Reduce Stress</button>
-        <button class="quick-action-btn" data-action="breathing">🧘 Breathing Exercise</button>
-        <button class="quick-action-btn" data-action="talk">💬 Just Talk</button>
-        <button class="quick-action-btn" data-action="help">🆘 Get Help</button>
+      <div class="quick-actions" id="quick-actions">
+        <button class="quick-action-btn" data-message="I'm feeling sad today">😔 Feeling Sad</button>
+        <button class="quick-action-btn" data-message="I need motivation">💪 Need Motivation</button>
+        <button class="quick-action-btn" data-message="I'm stressed">😰 Feeling Stressed</button>
+        <button class="quick-action-btn" id="breathing-btn">🧘‍♀️ Breathing Exercise</button>
+        <button class="quick-action-btn" data-message="I want to talk">💬 Just Talk</button>
+        <button class="quick-action-btn danger-btn" id="get-help-btn">🆘 Get Help</button>
       </div>
-
       <div class="input-container">
-        <button class="voice-btn" id="voiceBtn">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <rect x="8" y="2" width="4" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M5 10C5 12.8 7.2 15 10 15C12.8 15 15 12.8 15 10" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M10 15V18M10 18H7M10 18H13" stroke="currentColor" stroke-width="1.5"/>
-          </svg>
-        </button>
-
-        <input type="text" class="message-input" id="messageInput" placeholder="Share what's on your mind..." autocomplete="off"/>
-
-        <button class="send-btn" id="sendBtn">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M18 2L9 11M18 2L12 18L9 11M18 2L2 8L9 11" stroke="currentColor" stroke-width="1.5"/>
-          </svg>
-        </button>
+        <div class="input-wrapper">
+          <button class="input-icon-btn" id="voice-btn" title="Voice Input">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+              <line x1="12" y1="19" x2="12" y2="23" />
+              <line x1="8" y1="23" x2="16" y2="23" />
+            </svg>
+          </button>
+          <input type="text" id="message-input" class="message-input" placeholder="Share your thoughts..."
+            autocomplete="off">
+          <button class="send-btn" id="send-btn" title="Send Message">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13" />
+              <polygon points="22 2 15 22 11 13 2 9 22 2" />
+            </svg>
+          </button>
+        </div>
       </div>
-
     </div>
-  </div>
-
-  <div class="modal" id="moodTrackerModal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2>Track Your Mood</h2>
-        <button class="modal-close" data-modal="moodTrackerModal">✕</button>
-      </div>
-      <div class="modal-body">
-        <p>How are you feeling right now?</p>
+    <div class="modal" id="mood-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>How are you feeling?</h2>
+          <button class="close-btn" id="close-mood-modal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
         <div class="mood-options">
-          <button class="mood-option" data-mood="great">😊 Great</button>
-          <button class="mood-option" data-mood="good">🙂 Good</button>
-          <button class="mood-option" data-mood="okay">😐 Okay</button>
-          <button class="mood-option" data-mood="low">😔 Low</button>
-          <button class="mood-option" data-mood="struggling">😢 Struggling</button>
+          <button class="mood-btn" data-mood="amazing"><span class="mood-emoji">🤩</span><span
+              class="mood-label">Amazing</span></button>
+          <button class="mood-btn" data-mood="happy"><span class="mood-emoji">😊</span><span
+              class="mood-label">Happy</span></button>
+          <button class="mood-btn" data-mood="okay"><span class="mood-emoji">😐</span><span
+              class="mood-label">Okay</span></button>
+          <button class="mood-btn" data-mood="sad"><span class="mood-emoji">😔</span><span
+              class="mood-label">Sad</span></button>
+          <button class="mood-btn" data-mood="anxious"><span class="mood-emoji">😰</span><span
+              class="mood-label">Anxious</span></button>
+        </div>
+        <div class="mood-history-section"
+          style="border-top: 1px solid rgba(255,255,255,0.1); padding: 20px; margin-top: 20px;">
+          <h3 style="margin-bottom: 15px; font-size: 1.1rem; color: var(--text-secondary);">Recent Moods</h3>
+          <div id="mood-history-list" style="display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px;">
+            <span style="color: var(--text-muted); font-size: 0.9rem;">No mood history yet.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="resources-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Get Help</h2>
+          <button class="close-btn" id="close-resources-modal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+        <div class="resources-content" style="padding: 24px;">
+          <div class="resource-card"
+            style="background: rgba(255, 99, 99, 0.1); border: 1px solid rgba(255, 99, 99, 0.3); padding: 16px; border-radius: 12px; margin-bottom: 16px;">
+            <h3 style="color: #ff6b6b; margin-bottom: 8px;">🚨 Crisis Support</h3>
+            <p style="margin-bottom: 8px;">If you are in immediate danger or need urgent help:</p>
+            <ul style="list-style: none;">
+              <li style="margin-bottom: 4px;"><strong>iCall (TISS, Mumbai):</strong> +91-9152987821</li>
+              <li><strong>AASRA (24/7 Suicide Prevention Helpline):</strong> +91-9820466726</li>
+            </ul>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">BloomMind AI is an AI companion and cannot replace
+            professional mental health care.</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="breathing-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Breathing Exercise</h2>
+          <div class="modal-actions" style="display: flex; gap: 8px;">
+            <button class="icon-btn" id="breathing-sound-btn" title="Toggle Sound" style="width: 32px; height: 32px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              </svg>
+            </button>
+            <button class="close-btn" id="close-breathing-modal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="breathing-container"
+          style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 24px; min-height: 300px;">
+          <div class="breathing-circle"></div>
+          <p class="breathing-text"
+            style="margin-top: 32px; font-size: 1.5rem; font-weight: 600; color: var(--text-primary); text-align: center;">
+            Inhale</p>
+          <p style="margin-top: 16px; color: var(--text-muted); text-align: center; max-width: 300px;">Follow the
+            circle. Breathe in for 4 seconds, hold for 4 seconds, breathe out for 4 seconds.</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="settings-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Settings</h2>
+          <button class="close-btn" id="close-settings-modal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+        <div class="settings-content">
+          <div class="setting-item">
+            <label for="theme-toggle">
+              <span class="setting-label">Dark Mode</span>
+              <span class="setting-description">Toggle dark/light theme</span>
+            </label>
+            <label class="toggle-switch">
+              <input type="checkbox" id="theme-toggle" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-item">
+            <label for="sound-toggle">
+              <span class="setting-label">Sound Effects</span>
+              <span class="setting-description">Enable notification sounds</span>
+            </label>
+            <label class="toggle-switch">
+              <input type="checkbox" id="sound-toggle" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-item">
+            <label for="animations-toggle">
+              <span class="setting-label">Animations</span>
+              <span class="setting-description">Enable smooth animations</span>
+            </label>
+            <label class="toggle-switch">
+              <input type="checkbox" id="animations-toggle" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-item">
+            <label for="calm-mode-toggle">
+              <span class="setting-label">Calm Mode</span>
+              <span class="setting-description">Hide background shapes</span>
+            </label>
+            <label class="toggle-switch">
+              <input type="checkbox" id="calm-mode-toggle">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-item" style="cursor: default;">
+            <button id="clear-history-btn" class="settings-action-btn"
+              style="width: 100%; padding: 12px; background: rgba(255, 107, 157, 0.1); color: #ff6b9d; border: 1px solid rgba(255, 107, 157, 0.3); border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">🗑️
+              Clear Conversation History</button>
+          </div>
+          <div class="setting-item" style="cursor: default; border: none; background: transparent; padding: 0;">
+            <button id="logout-btn" class="settings-action-btn"
+              style="width: 100%; padding: 12px; background: rgba(255, 255, 255, 0.05); color: var(--text-muted); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">🚪
+              Log Out & Reset</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="modal" id="resourcesModal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2>Mental Health Resources</h2>
-        <button class="modal-close" data-modal="resourcesModal">✕</button>
-      </div>
-      <div class="modal-body">
-        <h3>Crisis Support</h3>
-        <p><strong>988</strong> (US)</p>
-        <p>Text HOME to 741741</p>
-
-        <h3>Professional Help</h3>
-        <p>SAMHSA: 1-800-662-4357</p>
-        <p>Psychology Today</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal" id="breathingModal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2>Breathing Exercise</h2>
-        <button class="modal-close" data-modal="breathingModal">✕</button>
-      </div>
-      <div class="modal-body">
-        <div class="breathing-container">
-          <div class="breathing-circle" id="breathingCircle"></div>
-          <p id="breathingInstruction">Click Start to begin</p>
-          <button id="breathingStartBtn">Start Exercise</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal" id="settingsModal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2>Settings</h2>
-        <button class="modal-close" data-modal="settingsModal">✕</button>
-      </div>
-      <div class="modal-body">
-        <label><input type="checkbox" id="notificationsToggle"> Notifications</label>
-        <label><input type="checkbox" id="soundToggle" checked> Sound</label>
-        <label><input type="checkbox" id="dataToggle" checked> Save History</label>
-
-        <button>Clear Chat History</button>
-        <button>Export Data</button>
-      </div>
-    </div>
-  </div>
-
+  <script type="module" src="script.js"></script>
 </body>
+
 </html>
