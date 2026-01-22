@@ -1,75 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BloomMind AI</title>
-
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap"
-        rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BloomMind AI</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <header class="site-header">
-        <a href="#" class="brand">
-            <svg class="logo-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="grad-left" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#334155" />
-                        <stop offset="100%" stop-color="#94a3b8" />
-                    </linearGradient>
-                    <linearGradient id="grad-right" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#0f766e" />
-                        <stop offset="100%" stop-color="#2dd4bf" />
-                    </linearGradient>
-                </defs>
 
-                <path class="brain-lobe left"
-                    d="M32 54C32 54 12 48 8 28C6 18 14 6 30 10C30 10 20 18 22 30C23 36 32 40 32 40"
-                    stroke="url(#grad-left)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-
-                <path class="brain-lobe right"
-                    d="M32 54C32 54 52 48 56 28C58 18 50 6 34 10C34 10 44 18 42 30C41 36 32 40 32 40"
-                    stroke="url(#grad-right)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-
-                <path d="M32 58V40" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-linecap="round" />
-                <circle cx="32" cy="10" r="2" fill="#94a3b8" />
-                <circle cx="8" cy="28" r="1.5" fill="#475569" />
-                <circle cx="56" cy="28" r="1.5" fill="#2dd4bf" />
-            </svg>
-
-            <div class="brand-text">
-                <span class="brand-name">BloomMind</span>
-                <span class="brand-tagline">AI Mental Wellness</span>
-            </div>
-        </a>
-
-        <a href="#get-started" class="cta-button">
-            Start Your Journey
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-            </svg>
-        </a>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo-container">
+        <span class="logo-text">BloomMind</span>
+      </div>
+      <div class="header-actions">
+        <button id="settingsBtn" aria-label="Settings">⚙️</button>
+      </div>
     </header>
 
-    <main class="hero">
-        <h1>
-            Cultivate Your<br />
-            Inner Clarity
-        </h1>
+    <!-- Chat Area -->
+    <main class="chat-container">
+      <div class="chat-messages" id="chatMessages">
+        <div class="message bot-message">
+          <div class="message-bubble">
+            <p>Hi, I'm BloomMind... your calm AI guide. How are you feeling today?</p>
+          </div>
+        </div>
+      </div>
 
-        <p>
-            Meet your 24/7 AI companion for mental wellness designed to be a gentle,
-            non-judgmental guide to emotional resilience. BloomMind helps you process
-            emotions, find inner calm, and grow one mindful step at a time.
-        </p>
+      <!-- Quick Actions -->
+      <div class="quick-actions">
+        <button data-action="overwhelmed">Feeling Overwhelmed</button>
+        <button data-action="clarity">Need Clarity</button>
+        <button data-action="stress">Reduce Stress</button>
+        <button data-action="breathing">Breathing Exercise</button>
+        <button data-action="talk">Just Talk</button>
+      </div>
+
+      <!-- Input -->
+      <div class="input-container">
+        <input
+          type="text"
+          id="messageInput"
+          placeholder="Share what's on your mind..."
+          autocomplete="off"
+        />
+        <button id="sendBtn">Send</button>
+      </div>
     </main>
+  </div>
 </body>
 
 </html>
