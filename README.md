@@ -59,7 +59,7 @@
 Contributions are welcome!
 1. Fork & Branch (`feature/NewThing`)
 2. Keep it vanilla (no frameworks)
-3. Submit a PR
+3. Submit a Pull Request
 
 ---
 
