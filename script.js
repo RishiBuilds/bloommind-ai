@@ -444,7 +444,7 @@ Respond to the user's latest message with compassion and clarity.`;
     }
     renderMessage(text, sender, time) {
         const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${sender}-message`;
+        messageDiv.className = `message ${sender}-message ${this.isRestoringHistory ? 'no-anim' : ''}`;
         const displayTime = time || new Date().toLocaleTimeString('en-US', {
             hour: 'numeric',
             minute: '2-digit'
@@ -462,7 +462,7 @@ Respond to the user's latest message with compassion and clarity.`;
                     </svg>
                 </div>
                 <div class="message-content">
-                    <div class="message-bubble ${this.isRestoringHistory ? 'no-anim' : ''}">
+                    <div class="message-bubble">
                         <p>${this.formatMessage(text)}</p>
                     </div>
                     <div class="message-time">${displayTime}</div>
@@ -472,7 +472,7 @@ Respond to the user's latest message with compassion and clarity.`;
             messageDiv.innerHTML = `
                 <div class="message-avatar"></div>
                 <div class="message-content">
-                    <div class="message-bubble ${this.isRestoringHistory ? 'no-anim' : ''}">
+                    <div class="message-bubble">
                         <p>${this.escapeHtml(text)}</p>
                     </div>
                     <div class="message-time">${displayTime}</div>
